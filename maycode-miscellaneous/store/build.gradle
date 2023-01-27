@@ -1,0 +1,6 @@
+/**
+ * Spring
+ */
+dependencies {
+    provided group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
+}
