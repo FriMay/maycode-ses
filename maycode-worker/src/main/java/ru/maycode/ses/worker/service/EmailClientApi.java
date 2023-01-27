@@ -2,10 +2,11 @@ package ru.maycode.ses.worker.service;
 
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
-import lombok.SneakyThrows;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Component;
+
+import java.util.Random;
 
 @Log4j2
 @RequiredArgsConstructor
@@ -13,12 +14,21 @@ import org.springframework.stereotype.Component;
 @Component
 public class EmailClientApi {
 
-    @SneakyThrows
-    public void sendEmail(String destinationEmail, String message) {
+    Random random = new Random();
 
-        // pururururu, email send
-        Thread.sleep(1000L);
+    /**
+     * @return true if email delivered to destination email
+     */
+    public boolean sendEmail(String destinationEmail, String message) {
 
-        log.info("Email to %s successfully sent.".formatted(destinationEmail));
+        try {
+            Thread.sleep(1000L);
+        } catch (InterruptedException e) {
+            return false;
+        }
+
+        return true;
+
+//        return random.nextInt(11) < 5;
     }
 }

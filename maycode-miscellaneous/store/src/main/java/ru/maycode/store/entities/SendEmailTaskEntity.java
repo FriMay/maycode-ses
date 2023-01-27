@@ -25,6 +25,8 @@ public class SendEmailTaskEntity {
     @Column(updatable = false, nullable = false)
     Instant createdAt = Instant.now();
 
+    Instant latestTryAt;
+
     Instant processedAt;
 
     String destinationEmail;

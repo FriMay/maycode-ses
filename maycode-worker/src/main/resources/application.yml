@@ -1,5 +1,9 @@
 server:
-  port: 8080
+  port: 8090
+
+logging:
+  level:
+    ru.maycode: DEBUG
 
 spring:
   datasource:
