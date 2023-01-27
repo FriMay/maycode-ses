@@ -27,8 +27,6 @@ public class EmailClientApi {
             return false;
         }
 
-        return true;
-
-//        return random.nextInt(11) < 5;
+        return random.nextInt(11) < 5;
     }
 }
